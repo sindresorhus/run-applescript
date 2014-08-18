@@ -12,9 +12,6 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "os": [
-    "darwin"
-  ],
   "scripts": {
     "test": "node test.js"
   },
