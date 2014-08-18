@@ -1,0 +1,33 @@
+{
+  "name": "run-applescript",
+  "version": "0.0.0",
+  "description": "Run AppleScript and get the result",
+  "license": "MIT",
+  "repository": "sindresorhus/run-applescript",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "os": [
+    "darwin"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "osx",
+    "mac",
+    "applescript"
+  ],
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
+}
