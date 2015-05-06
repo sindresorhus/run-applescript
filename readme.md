@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save run-applescript
 ```
 
@@ -17,7 +17,7 @@ var runApplescript = require('run-applescript');
 
 runApplescript('return "unicorn"', function (err, result) {
 	console.log(result);
-	//=> unicorn
+	//=> 'unicorn'
 });
 ```
 
