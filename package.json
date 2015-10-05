@@ -7,7 +7,7 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -16,13 +16,15 @@
     "test": "xo && ava"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "index.js"
   ],
   "keywords": [
     "osx",
     "mac",
-    "applescript"
+    "applescript",
+    "osascript",
+    "run",
+    "execute"
   ],
   "dependencies": {
     "pify": "^2.2.0",
