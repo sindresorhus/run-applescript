@@ -1,17 +1,15 @@
 'use strict';
 var execFile = require('child_process').execFile;
+var Promise = require('pinkie-promise');
+var pify = require('pify');
 
-module.exports = function (str, cb) {
+module.exports = function (str) {
 	if (process.platform !== 'darwin') {
-		throw new Error('Only OS X systems are supported');
+		return Promise.reject(new Error('Only OS X systems are supported'));
 	}
 
-	execFile('osascript', ['-e', str], function (err, stdout) {
-		if (err) {
-			cb(err);
-			return;
-		}
-
-		cb(err, stdout.trim());
-	});
+	return pify(execFile, Promise)('osascript', ['-e', str])
+		.then(function (stdout) {
+			return stdout.trim();
+		});
 };

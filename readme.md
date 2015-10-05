@@ -13,9 +13,9 @@ $ npm install --save run-applescript
 ## Usage
 
 ```js
-var runApplescript = require('run-applescript');
+const runApplescript = require('run-applescript');
 
-runApplescript('return "unicorn"', function (err, result) {
+runApplescript('return "unicorn"').then(result => {
 	console.log(result);
 	//=> 'unicorn'
 });
