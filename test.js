@@ -1,12 +1,8 @@
-'use strict';
-var test = require('ava');
-var runApplescript = require('./');
+import test from 'ava';
+import fn from './';
 
-test(function (t) {
-	t.plan(2);
+test(async t => {
+	const res = await fn('return "unicorn"');
 
-	runApplescript('return "unicorn"', function (err, res) {
-		t.assert(!err, err);
-		t.assert(res === 'unicorn');
-	});
+	t.is(res, 'unicorn');
 });
