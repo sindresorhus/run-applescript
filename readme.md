@@ -24,4 +24,4 @@ runApplescript('return "unicorn"').then(result => {
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
