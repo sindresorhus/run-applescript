@@ -1,6 +1,6 @@
 import test from 'ava';
-import fn from './';
+import m from './';
 
 test(async t => {
-	t.is(await fn('return "unicorn"'), 'unicorn');
+	t.is(await m('return "unicorn"'), 'unicorn');
 });

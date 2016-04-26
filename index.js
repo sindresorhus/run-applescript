@@ -6,5 +6,5 @@ module.exports = str => {
 		return Promise.reject(new Error('Only OS X is supported'));
 	}
 
-	return execa('osascript', ['-e', str]).then(res => res.stdout);
+	return execa.stdout('osascript', ['-e', str]);
 };
