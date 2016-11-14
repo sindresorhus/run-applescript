@@ -22,6 +22,11 @@ runApplescript('return "unicorn"').then(result => {
 ```
 
 
+## Related
+
+- [run-jxa](https://github.com/sindresorhus/run-jxa) - Run JXA code and get the result
+
+
 ## License
 
 MIT © [Sindre Sorhus](https://sindresorhus.com)
