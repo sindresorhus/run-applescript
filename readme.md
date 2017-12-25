@@ -21,6 +21,15 @@ runApplescript('return "unicorn"').then(result => {
 });
 ```
 
+## API
+
+### runAppleScript(script)
+
+Returns a `Promise<string>` of the script results
+
+### runAppleScript.sync(script)
+
+Returns the script results as `string`
 
 ## Related
 
