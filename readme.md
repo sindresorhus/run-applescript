@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save run-applescript
+$ npm install run-applescript
 ```
 
 
@@ -15,21 +15,25 @@ $ npm install --save run-applescript
 ```js
 const runApplescript = require('run-applescript');
 
-runApplescript('return "unicorn"').then(result => {
+(async () => {
+	const result = await runApplescript('return "unicorn"');
+
 	console.log(result);
 	//=> 'unicorn'
-});
+})();
 ```
+
 
 ## API
 
 ### runAppleScript(script)
 
-Returns a `Promise<string>` of the script results
+Returns a `Promise<string>` with the script result.
 
 ### runAppleScript.sync(script)
 
-Returns the script results as `string`
+Returns a `string` with the script result.
+
 
 ## Related
 
