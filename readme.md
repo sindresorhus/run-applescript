@@ -34,6 +34,14 @@ Returns a `Promise<string>` with the script result.
 
 Returns a `string` with the script result.
 
+### runAppleScript.noExec(script)
+
+Returns a `Promise<string>` with the script result (executed without "-e" parameter in osascript).
+
+### runAppleScript.noExecSync(script)
+
+Returns a `string` with the script result (executed without "-e" parameter in osascript).
+
 
 ## Related
 
