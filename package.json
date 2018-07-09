@@ -9,6 +9,9 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
+  "os": [
+    "darwin"
+  ],
   "engines": {
     "node": ">=4"
   },
