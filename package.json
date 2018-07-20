@@ -1,36 +1,36 @@
 {
-  "name": "run-applescript",
-  "version": "3.2.0",
-  "description": "Run AppleScript and get the result",
-  "license": "MIT",
-  "repository": "sindresorhus/run-applescript",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "macos",
-    "mac",
-    "applescript",
-    "osascript",
-    "run",
-    "execute"
-  ],
-  "dependencies": {
-    "execa": "^0.10.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "run-applescript",
+	"version": "3.2.0",
+	"description": "Run AppleScript and get the result",
+	"license": "MIT",
+	"repository": "sindresorhus/run-applescript",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"macos",
+		"mac",
+		"applescript",
+		"osascript",
+		"run",
+		"execute"
+	],
+	"dependencies": {
+		"execa": "^0.10.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }
