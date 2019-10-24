@@ -16,4 +16,4 @@ declare namespace runApplescript {
 	function sync(script: string): string;
 }
 
-export default runApplescript;
+export = runApplescript;

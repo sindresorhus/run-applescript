@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import runApplescript from '.';
+import runApplescript = require('.');
 
 expectType<Promise<string>>(runApplescript('return "unicorn"'));
 expectType<string>(runApplescript.sync('return "unicorn"'));
