@@ -1,41 +1,41 @@
-/**
-Run Applescript
-
-@example
-```
-const runApplescript = require('run-applescript');
-
-(async () => {
-	const result = await runApplescript('return "unicorn"');
-
-	console.log(result);
-	//=> 'unicorn'
-})();
-```
-
-@param script The script to run.
-@returns The script result.
-*/
-declare function runApplescript(script: string): Promise<string>;
-
-declare namespace runApplescript {
+declare const runApplescript: {
 	/**
-	Run Applescript sync
+	Run AppleScript.
+
+	@param script - The script to run.
+	@returns The script result.
 
 	@example
 	```
-	const runApplescript = require('run-applescript');
+	import runApplescript = require('run-applescript');
+
+	(async () => {
+		const result = await runApplescript('return "unicorn"');
+
+		console.log(result);
+		//=> 'unicorn'
+	})();
+	```
+	*/
+	(script: string): Promise<string>;
+
+	/**
+	Run AppleScript synchronously.
+	
+	@param script - The script to run.
+	@returns The script result.
+
+	@example
+	```
+	import runApplescript = require('run-applescript');
 
 	const result = runApplescript.sync('return "unicorn"');
 
 	console.log(result);
 	//=> 'unicorn'
 	```
-
-	@param script The script to run.
-	@returns The script result.
 	*/
-	function sync(script: string): string;
+	sync(script: string): string;
 }
 
 export = runApplescript;
