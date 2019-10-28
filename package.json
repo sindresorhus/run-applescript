@@ -13,10 +13,11 @@
 		"node": ">=6"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"macos",
@@ -31,6 +32,7 @@
 	},
 	"devDependencies": {
 		"ava": "*",
+		"tsd": "^0.10.0",
 		"xo": "*"
 	}
 }
