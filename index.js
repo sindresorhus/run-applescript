@@ -1,12 +1,13 @@
 'use strict';
 const execa = require('execa');
 
-module.exports = script => {
+module.exports = async script => {
 	if (process.platform !== 'darwin') {
-		return Promise.reject(new Error('macOS only'));
+		throw new Error('macOS only');
 	}
 
-	return execa.stdout('osascript', ['-e', script]);
+	const {stdout} = await execa('osascript', ['-e', script]);
+	return stdout;
 };
 
 module.exports.sync = script => {
@@ -14,5 +15,6 @@ module.exports.sync = script => {
 		throw new Error('macOS only');
 	}
 
-	return execa.sync('osascript', ['-e', script]).stdout;
+	const {stdout} = execa.sync('osascript', ['-e', script]);
+	return stdout;
 };

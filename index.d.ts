@@ -21,7 +21,7 @@ declare const runApplescript: {
 
 	/**
 	Run AppleScript synchronously.
-	
+
 	@param script - The script to run.
 	@returns The script result.
 
