@@ -1,4 +1,4 @@
-# run-applescript [![Build Status](https://travis-ci.org/sindresorhus/run-applescript.svg?branch=master)](https://travis-ci.org/sindresorhus/run-applescript)
+# run-applescript
 
 > Run AppleScript and get the result
 
