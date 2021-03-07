@@ -1,10 +1,10 @@
 import test from 'ava';
-import runApplescript from '.';
+import {runAppleScriptAsync, runAppleScriptSync} from './index.js';
 
-test('async - returns as expected', async t => {
-	t.is(await runApplescript('return "unicorn"'), 'unicorn');
+test('async', async t => {
+	t.is(await runAppleScriptAsync('return "unicorn"'), 'unicorn');
 });
 
-test('sync - returns as expected', t => {
-	t.is(runApplescript.sync('return "unicorn"'), 'unicorn');
+test('sync', t => {
+	t.is(runAppleScriptSync('return "unicorn"'), 'unicorn');
 });

@@ -1,20 +1,19 @@
-'use strict';
-const execa = require('execa');
+import execa from 'execa';
 
-module.exports = async script => {
+export async function runAppleScriptAsync(script) {
 	if (process.platform !== 'darwin') {
 		throw new Error('macOS only');
 	}
 
 	const {stdout} = await execa('osascript', ['-e', script]);
 	return stdout;
-};
+}
 
-module.exports.sync = script => {
+export function runAppleScriptSync(script) {
 	if (process.platform !== 'darwin') {
 		throw new Error('macOS only');
 	}
 
 	const {stdout} = execa.sync('osascript', ['-e', script]);
 	return stdout;
-};
+}
