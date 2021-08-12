@@ -1,6 +1,7 @@
+import process from 'node:process';
 import execa from 'execa';
 
-export async function runAppleScriptAsync(script) {
+export async function runAppleScript(script) {
 	if (process.platform !== 'darwin') {
 		throw new Error('macOS only');
 	}

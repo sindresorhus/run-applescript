@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import {runAppleScriptAsync, runAppleScriptSync} from './index.js';
+import {runAppleScript, runAppleScriptSync} from './index.js';
 
-expectType<Promise<string>>(runAppleScriptAsync('return "unicorn"'));
+expectType<Promise<string>>(runAppleScript('return "unicorn"'));
 expectType<string>(runAppleScriptSync('return "unicorn"'));

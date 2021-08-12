@@ -6,15 +6,15 @@ Run AppleScript asynchronously.
 
 @example
 ```
-import {runAppleScriptAsync} from 'run-applescript';
+import {runAppleScript} from 'run-applescript';
 
-const result = await runAppleScriptAsync('return "unicorn"');
+const result = await runAppleScript('return "unicorn"');
 
 console.log(result);
 //=> 'unicorn'
 ```
 */
-export function runAppleScriptAsync(script: string): Promise<string>;
+export function runAppleScript(script: string): Promise<string>;
 
 /**
 Run AppleScript synchronously.

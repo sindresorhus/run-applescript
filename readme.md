@@ -11,9 +11,9 @@ $ npm install run-applescript
 ## Usage
 
 ```js
-import {runAppleScriptAsync} from 'run-applescript';
+import {runAppleScript} from 'run-applescript';
 
-const result = await runAppleScriptAsync('return "unicorn"');
+const result = await runAppleScript('return "unicorn"');
 
 console.log(result);
 //=> 'unicorn'
@@ -21,7 +21,7 @@ console.log(result);
 
 ## API
 
-### runAppleScriptAsync(script)
+### runAppleScript(script)
 
 Returns a `Promise<string>` with the script result.
 

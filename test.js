@@ -1,8 +1,8 @@
 import test from 'ava';
-import {runAppleScriptAsync, runAppleScriptSync} from './index.js';
+import {runAppleScript, runAppleScriptSync} from './index.js';
 
 test('async', async t => {
-	t.is(await runAppleScriptAsync('return "unicorn"'), 'unicorn');
+	t.is(await runAppleScript('return "unicorn"'), 'unicorn');
 });
 
 test('sync', t => {
