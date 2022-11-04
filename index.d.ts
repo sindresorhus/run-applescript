@@ -2,6 +2,7 @@
 Run AppleScript asynchronously.
 
 @param script - The script to run.
+@param flags - Output modifier flags.
 @returns The script result.
 
 @example
@@ -14,12 +15,13 @@ console.log(result);
 //=> 'unicorn'
 ```
 */
-export function runAppleScript(script: string): Promise<string>;
+export function runAppleScript(script: string, flags?: string): Promise<string>;
 
 /**
 Run AppleScript synchronously.
 
 @param script - The script to run.
+@param flags - Output modifier flags.
 @returns The script result.
 
 @example
@@ -32,4 +34,4 @@ console.log(result);
 //=> 'unicorn'
 ```
 */
-export function runAppleScriptSync(script: string): string;
+export function runAppleScriptSync(script: string, flags?: string): string;
