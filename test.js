@@ -10,9 +10,9 @@ test('sync', t => {
 });
 
 test('output flags async', async t => {
-	t.is(await runAppleScript('return {"unicorn"}', 's'), '{"unicorn"}');
+	t.is(await runAppleScript('return {"unicorn"}', false), '{"unicorn"}');
 });
 
 test('output flags sync', t => {
-	t.is(runAppleScriptSync('return {"unicorn"}', 's'), '{"unicorn"}');
+	t.is(runAppleScriptSync('return {"unicorn"}', false), '{"unicorn"}');
 });
