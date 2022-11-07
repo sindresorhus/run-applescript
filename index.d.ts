@@ -1,8 +1,18 @@
+export type Options = {
+	/**
+	Modifies the output style.
+	If false returns value in recompilable source form.
+
+	@default true
+	*/
+	readonly humanReadableOutput?: boolean;
+};
+
 /**
 Run AppleScript asynchronously.
 
 @param script - The script to run.
-@param humanReadableOutput - Output modifier option (defaults to true).
+@param options - Options used when running the script.
 @returns The script result.
 
 @example
@@ -14,14 +24,27 @@ const result = await runAppleScript('return "unicorn"');
 console.log(result);
 //=> 'unicorn'
 ```
+
+@example
+```
+import {runAppleScript} from 'run-applescript';
+
+const options = {
+    humanReadableOutput: false
+}
+const result = await runAppleScript('return "unicorn"', options);
+
+console.log(result);
+//=> '"unicorn"'
+```
 */
-export function runAppleScript(script: string, humanReadableOutput?: boolean): Promise<string>;
+export function runAppleScript(script: string, options?: Options): Promise<string>;
 
 /**
 Run AppleScript synchronously.
 
 @param script - The script to run.
-@param humanReadableOutput - Output modifier option (defaults to true).
+@param options - Options used when running the script.
 @returns The script result.
 
 @example
@@ -33,5 +56,18 @@ const result = runAppleScriptSync('return "unicorn"');
 console.log(result);
 //=> 'unicorn'
 ```
+
+@example
+```
+import {runAppleScript} from 'run-applescript';
+
+const options = {
+    humanReadableOutput: false
+}
+const result = await runAppleScript('return "unicorn"', options);
+
+console.log(result);
+//=> '"unicorn"'
+```
 */
-export function runAppleScriptSync(script: string, humanReadableOutput?: boolean): string;
+export function runAppleScriptSync(script: string, options?: Options): string;

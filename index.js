@@ -1,24 +1,28 @@
 import process from 'node:process';
 import execa from 'execa';
 
-export async function runAppleScript(script, humanReadableOutput = true) {
+const DEFAULT_OPTIONS = {
+	humanReadableOutput: true,
+};
+
+export async function runAppleScript(script, options = DEFAULT_OPTIONS) {
 	if (process.platform !== 'darwin') {
 		throw new Error('macOS only');
 	}
 
-	const humanReadableFlag = humanReadableOutput ? [] : ['-ss'];
+	const outputArg = options.humanReadableOutput ? [] : ['-ss'];
 
-	const {stdout} = await execa('osascript', ['-e', script, ...humanReadableFlag]);
+	const {stdout} = await execa('osascript', ['-e', script, outputArg]);
 	return stdout;
 }
 
-export function runAppleScriptSync(script, humanReadableOutput = true) {
+export function runAppleScriptSync(script, options = DEFAULT_OPTIONS) {
 	if (process.platform !== 'darwin') {
 		throw new Error('macOS only');
 	}
 
-	const humanReadableFlag = humanReadableOutput ? [] : ['-ss'];
+	const outputArg = options.humanReadableOutput ? [] : ['-ss'];
 
-	const {stdout} = execa.sync('osascript', ['-e', script, ...humanReadableFlag]);
+	const {stdout} = execa.sync('osascript', ['-e', script, ...outputArg]);
 	return stdout;
 }
