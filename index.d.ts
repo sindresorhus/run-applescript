@@ -2,8 +2,18 @@ export type Options = {
 	/**
 	Modifies the output style.
 	If false returns value in recompilable source form.
+	Check {@link https://ss64.com/osx/osascript.html|Osascript's man age} for more information.
 
 	@default true
+	@example
+	```
+	import {runAppleScript} from 'run-applescript';
+
+	const result = await runAppleScript('return "unicorn"', {humanReadableOutput: false});
+
+	console.log(result);
+	//=> '"unicorn"'
+	```
 	*/
 	readonly humanReadableOutput?: boolean;
 };
@@ -29,10 +39,7 @@ console.log(result);
 ```
 import {runAppleScript} from 'run-applescript';
 
-const options = {
-    humanReadableOutput: false
-}
-const result = await runAppleScript('return "unicorn"', options);
+const result = await runAppleScript('return "unicorn"', {humanReadableOutput: false});
 
 console.log(result);
 //=> '"unicorn"'
@@ -61,10 +68,7 @@ console.log(result);
 ```
 import {runAppleScript} from 'run-applescript';
 
-const options = {
-    humanReadableOutput: false
-}
-const result = await runAppleScript('return "unicorn"', options);
+const result = await runAppleScript('return "unicorn"', {humanReadableOutput: false});
 
 console.log(result);
 //=> '"unicorn"'
