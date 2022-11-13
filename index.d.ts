@@ -1,10 +1,11 @@
 export type Options = {
 	/**
-	Modifies the output style.
-	If false returns value in recompilable source form.
-	Check {@link https://ss64.com/osx/osascript.html|Osascript's man age} for more information.
+	Change the output style.
+
+	When `false`, returns the value in a [recompilable source form](https://ss64.com/osx/osascript.html).
 
 	@default true
+
 	@example
 	```
 	import {runAppleScript} from 'run-applescript';
@@ -22,7 +23,6 @@ export type Options = {
 Run AppleScript asynchronously.
 
 @param script - The script to run.
-@param options - Options used when running the script.
 @returns The script result.
 
 @example
