@@ -34,18 +34,11 @@ const result = await runAppleScript('return "unicorn"');
 console.log(result);
 //=> 'unicorn'
 ```
-
-@example
-```
-import {runAppleScript} from 'run-applescript';
-
-const result = await runAppleScript('return "unicorn"', {humanReadableOutput: false});
-
-console.log(result);
-//=> '"unicorn"'
-```
 */
-export function runAppleScript(script: string, options?: Options): Promise<string>;
+export function runAppleScript(
+	script: string,
+	options?: Options
+): Promise<string>;
 
 /**
 Run AppleScript synchronously.
@@ -62,16 +55,6 @@ const result = runAppleScriptSync('return "unicorn"');
 
 console.log(result);
 //=> 'unicorn'
-```
-
-@example
-```
-import {runAppleScript} from 'run-applescript';
-
-const result = await runAppleScript('return "unicorn"', {humanReadableOutput: false});
-
-console.log(result);
-//=> '"unicorn"'
 ```
 */
 export function runAppleScriptSync(script: string, options?: Options): string;
