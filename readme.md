@@ -21,13 +21,51 @@ console.log(result);
 
 ## API
 
-### runAppleScript(script)
+### runAppleScript(script, options?)
 
 Returns a `Promise<string>` with the script result.
 
-### runAppleScriptSync(script)
+#### script
+
+Type: `string`
+
+The script to run.
+
+#### options
+
+Type: `object`
+
+##### humanReadableOutput
+
+Type: `boolean`\
+Default: `true`
+
+Change the output style.
+
+When `false`, returns the value in a [recompilable source form](https://ss64.com/osx/osascript.html).
+
+### runAppleScriptSync(script, options?)
 
 Returns a `string` with the script result.
+
+#### script
+
+Type: `string`
+
+The script to run.
+
+#### options
+
+Type: `object`
+
+##### humanReadableOutput
+
+Type: `boolean`\
+Default: `true`
+
+Change the output style.
+
+When `false`, returns the value in a [recompilable source form](https://ss64.com/osx/osascript.html).
 
 ## Related
 
