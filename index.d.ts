@@ -44,7 +44,6 @@ export function runAppleScript(
 Run AppleScript synchronously.
 
 @param script - The script to run.
-@param options - Options used when running the script.
 @returns The script result.
 
 @example
