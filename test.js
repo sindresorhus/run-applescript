@@ -9,18 +9,18 @@ test('sync', t => {
 	t.is(runAppleScriptSync('return "unicorn"'), 'unicorn');
 });
 
-test('non-human readable output - async', async t => {
+test('async - non-human readable output', async t => {
 	t.is(await runAppleScript('return "unicorn"', {humanReadableOutput: false}), '"unicorn"');
 });
 
-test('non-human readable output - sync', t => {
+test('sync - non-human readable output', t => {
 	t.is(runAppleScriptSync('return "unicorn"', {humanReadableOutput: false}), '"unicorn"');
 });
 
-test('non-human readable output (arrays) - async', async t => {
+test('async - non-human readable output (arrays)', async t => {
 	t.is(await runAppleScript('return {"unicorn"}', {humanReadableOutput: false}), '{"unicorn"}');
 });
 
-test('non-human readable output (arrays) - sync', t => {
+test('sync - non-human readable output (arrays)', t => {
 	t.is(runAppleScriptSync('return {"unicorn"}', {humanReadableOutput: false}), '{"unicorn"}');
 });
