@@ -1,3 +1,24 @@
+export type Options = {
+	/**
+	Change the output style.
+
+	When `false`, returns the value in a [recompilable source form](https://ss64.com/osx/osascript.html).
+
+	@default true
+
+	@example
+	```
+	import {runAppleScript} from 'run-applescript';
+
+	const result = await runAppleScript('return "unicorn"', {humanReadableOutput: false});
+
+	console.log(result);
+	//=> '"unicorn"'
+	```
+	*/
+	readonly humanReadableOutput?: boolean;
+};
+
 /**
 Run AppleScript asynchronously.
 
@@ -14,7 +35,10 @@ console.log(result);
 //=> 'unicorn'
 ```
 */
-export function runAppleScript(script: string): Promise<string>;
+export function runAppleScript(
+	script: string,
+	options?: Options
+): Promise<string>;
 
 /**
 Run AppleScript synchronously.
@@ -32,4 +56,4 @@ console.log(result);
 //=> 'unicorn'
 ```
 */
-export function runAppleScriptSync(script: string): string;
+export function runAppleScriptSync(script: string, options?: Options): string;
