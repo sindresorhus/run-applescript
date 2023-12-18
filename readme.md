@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install run-applescript
+```sh
+npm install run-applescript
 ```
 
 ## Usage

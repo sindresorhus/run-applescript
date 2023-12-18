@@ -1,5 +1,8 @@
 import process from 'node:process';
-import execa from 'execa';
+import {promisify} from 'node:util';
+import {execFile, execFileSync} from 'node:child_process';
+
+const execFileAsync = promisify(execFile);
 
 export async function runAppleScript(script, {humanReadableOutput = true} = {}) {
 	if (process.platform !== 'darwin') {
@@ -8,8 +11,8 @@ export async function runAppleScript(script, {humanReadableOutput = true} = {}) 
 
 	const outputArguments = humanReadableOutput ? [] : ['-ss'];
 
-	const {stdout} = await execa('osascript', ['-e', script, outputArguments]);
-	return stdout;
+	const {stdout} = await execFileAsync('osascript', ['-e', script, outputArguments]);
+	return stdout.trim();
 }
 
 export function runAppleScriptSync(script, {humanReadableOutput = true} = {}) {
@@ -19,6 +22,11 @@ export function runAppleScriptSync(script, {humanReadableOutput = true} = {}) {
 
 	const outputArguments = humanReadableOutput ? [] : ['-ss'];
 
-	const {stdout} = execa.sync('osascript', ['-e', script, ...outputArguments]);
-	return stdout;
+	const stdout = execFileSync('osascript', ['-e', script, ...outputArguments], {
+		encoding: 'utf8',
+		stdio: ['ignore', 'pipe', 'ignore'],
+		timeout: 500,
+	});
+
+	return stdout.trim();
 }
