@@ -24,3 +24,16 @@ test('async - non-human readable output (arrays)', async t => {
 test('sync - non-human readable output (arrays)', t => {
 	t.is(runAppleScriptSync('return {"unicorn"}', {humanReadableOutput: false}), '{"unicorn"}');
 });
+
+test('async - abort with AbortController', async t => {
+	const abortController = new AbortController();
+
+	setTimeout(() => {
+		abortController.abort();
+	}, 100);
+
+	await t.throwsAsync(
+		runAppleScript('delay 2\nreturn "completed"', {signal: abortController.signal}),
+		{name: 'AbortError'},
+	);
+});

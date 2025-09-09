@@ -4,14 +4,19 @@ import {execFile, execFileSync} from 'node:child_process';
 
 const execFileAsync = promisify(execFile);
 
-export async function runAppleScript(script, {humanReadableOutput = true} = {}) {
+export async function runAppleScript(script, {humanReadableOutput = true, signal} = {}) {
 	if (process.platform !== 'darwin') {
 		throw new Error('macOS only');
 	}
 
 	const outputArguments = humanReadableOutput ? [] : ['-ss'];
 
-	const {stdout} = await execFileAsync('osascript', ['-e', script, outputArguments]);
+	const execOptions = {};
+	if (signal) {
+		execOptions.signal = signal;
+	}
+
+	const {stdout} = await execFileAsync('osascript', ['-e', script, outputArguments], execOptions);
 	return stdout.trim();
 }
 

@@ -17,6 +17,13 @@ export type Options = {
 	```
 	*/
 	readonly humanReadableOutput?: boolean;
+
+	/**
+	An AbortSignal that can be used to cancel the AppleScript execution.
+
+	Only supported by the async function.
+	*/
+	readonly signal?: AbortSignal;
 };
 
 /**

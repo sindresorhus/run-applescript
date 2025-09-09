@@ -44,6 +44,12 @@ Change the output style.
 
 When `false`, returns the value in a [recompilable source form](https://ss64.com/osx/osascript.html).
 
+##### signal
+
+Type: `AbortSignal`
+
+An AbortSignal that can be used to cancel the AppleScript execution.
+
 ### runAppleScriptSync(script, options?)
 
 Returns a `string` with the script result.
