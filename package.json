@@ -1,6 +1,6 @@
 {
 	"name": "run-applescript",
-	"version": "7.0.0",
+	"version": "7.1.0",
 	"description": "Run AppleScript and get the result",
 	"license": "MIT",
 	"repository": "sindresorhus/run-applescript",
